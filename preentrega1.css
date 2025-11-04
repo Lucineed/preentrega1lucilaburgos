@@ -1,0 +1,53 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f7f9f8;
+    color: #2f3e35;
+}
+
+/* 🌿 Portada */
+.portada {
+    height: 260px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.titulo-principal {
+    font-size: 2.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 🌸 Galería */
+.galeria-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-img:hover {
+    transform: scale(1.03);
+}
+
+/* 🌺 Imagen presentación */
+.img-presentacion {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* 🌱 Iconos */
+svg {
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    color: #0d6efd;
+}
+
+.iconos-header {
+    position: relative;
+    z-index: 10;
+}
+
+svg:hover {
+    transform: scale(1.2);
+    color: #3aaf79;
+}
