@@ -1,0 +1,141 @@
+$font-main: 'Quicksand', sans-serif;
+
+// Mapa de colores
+$paleta: (
+    "primario": #2f3e35,
+    "secundario": #3aaf79,
+    "fondo": #f7f9f8,
+    "blanco": #ffffff,
+    "texto": #2f3e35,
+    "icono": #0d6efd
+);
+
+// Mixins
+@mixin animacion-fade-up($duracion: 0.9s) {
+    animation: fadeUp $duracion ease-out;
+}
+
+@mixin tarjeta-estilo {
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+}
+
+@mixin imagen-fix($altura) {
+    width: 100%;
+    height: $altura;
+    object-fit: cover;
+    border-radius: 0.5rem; // Un pequeño borde redondeado estético
+    @include animacion-fade-up;
+}
+
+// Estilos Globales
+body {
+    font-family: $font-main;
+    background-color: map-get($paleta, "fondo"); 
+    color: map-get($paleta, "texto");
+}
+
+// Portada
+.portada {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    filter: brightness(70%);
+    @include animacion-fade-up;
+}
+
+.titulo-principal {
+    font-size: 2.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+// Navegación (Nesting)
+.navbar {
+    .navbar-brand {
+        font-size: 1.5rem;
+        transition: color 0.3s;
+        
+        &:hover {
+            color: map-get($paleta, "secundario") !important;
+        }
+    }
+
+    .nav-link {
+        font-weight: 500;
+        
+        &.active {
+            color: map-get($paleta, "secundario") !important;
+            border-bottom: 2px solid map-get($paleta, "secundario");
+        }
+    }
+}
+
+// Tarjetas
+.card {
+    @include tarjeta-estilo;
+    
+    .card-title {
+        font-weight: 600;
+        color: map-get($paleta, "primario");
+    }
+}
+
+// Imágenes (Acá estaba el problema, ahora corregido con alturas fijas)
+.galeria-img {
+    @include imagen-fix(300px);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.img-presentacion {
+    @include imagen-fix(350px);
+}
+
+// Iconos Header
+.iconos-header {
+    svg {
+        color: map-get($paleta, "icono");
+        cursor: pointer;
+        transition: transform 0.2s, color 0.2s;
+
+        &:hover {
+            transform: scale(1.2);
+            color: map-get($paleta, "secundario");
+        }
+    }
+}
+
+// Footer
+footer {
+    background-color: map-get($paleta, "blanco");
+    border-top: 1px solid #eee;
+    
+    a {
+        display: inline-block;
+        padding: 5px;
+        border-radius: 50%;
+        
+        svg {
+            transition: color 0.3s ease;
+        }
+
+        &:hover svg {
+            color: map-get($paleta, "secundario");
+        }
+    }
+}
+
+// Keyframes
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
