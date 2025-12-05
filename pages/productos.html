@@ -4,26 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
 
-    <!-- Bootstrap -->
+    <meta name="description" content="Catálogo de cremas, serums y limpiadores naturales. Compra online.">
+    <meta name="keywords" content="skincare, belleza, argentina, cuidado de la piel">
+    <meta name="author" content="Tu Nombre">
+
+    <title>Esmeralda Skincare</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Tu hoja de estilo -->
     <link rel="stylesheet" href="../styles/preentrega1.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body class="bg-light text-dark">
 
-    <!-- 🪴 Encabezado -->
-    <header class="position-relative text-center">
-        <img src="../assets/imgtres.jpg" alt="Portada Esmeralda Skincare" class="img-fluid w-100 portada">
-        <h1 class="titulo-principal position-absolute top-50 start-50 translate-middle text-white fw-bold">Esmeralda
-            Skincare</h1>
+    <header>
+        <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../assets/imgtres.jpg" class="d-block w-100 portada" alt="Productos de skincare naturales"
+                        style="height: 400px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="fw-bold text-shadow">Esmeralda Skincare</h1>
+                        <p>Conecta con tu esencia natural.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/imgcuatro.jpg" class="d-block w-100 portada" alt="Mujer cuidando su piel"
+                        style="height: 400px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="fw-bold text-shadow">Rutinas Personalizadas</h2>
+                        <p>Encuentra el tratamiento ideal para ti.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
     </header>
 
     <!-- 🌿 Barra superior -->
@@ -124,7 +151,8 @@
                 <!-- Producto 5 -->
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
                     <div class="card h-100 shadow-sm border-0">
-                        <img src="../assets/producto5.jpg" class="card-img-top galeria-img" alt="Crema nutritiva de noche">
+                        <img src="../assets/producto5.jpg" class="card-img-top galeria-img"
+                            alt="Crema nutritiva de noche">
                         <div class="card-body">
                             <h5 class="card-title">Crema nutritiva de noche</h5>
                             <p class="card-text text-secondary">Repara la barrera de la piel mientras dormís.</p>
@@ -192,6 +220,10 @@
                 </div>
             </div>
         </section>
+        <a href="https://wa.me/12345678" class="btn-whatsapp" target="_blank"
+            style="position:fixed; bottom:20px; right:20px; z-index:100;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Whatsapp" width="50">
+        </a>
     </main>
 
 

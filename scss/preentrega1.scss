@@ -1,43 +1,9 @@
-$font-main: 'Quicksand', sans-serif;
+@import 'variables';
+@import 'mixins';
 
-// Mapa de colores
-$paleta: (
-    "primario": #2f3e35,
-    "secundario": #3aaf79,
-    "fondo": #f7f9f8,
-    "blanco": #ffffff,
-    "texto": #2f3e35,
-    "icono": #0d6efd
-);
-
-// Mixins
-@mixin animacion-fade-up($duracion: 0.9s) {
-    animation: fadeUp $duracion ease-out;
-}
-
-@mixin tarjeta-estilo {
-    border: none;
-    border-radius: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-    }
-}
-
-@mixin imagen-fix($altura) {
-    width: 100%;
-    height: $altura;
-    object-fit: cover;
-    border-radius: 0.5rem; // Un pequeño borde redondeado estético
-    @include animacion-fade-up;
-}
-
-// Estilos Globales
 body {
     font-family: $font-main;
-    background-color: map-get($paleta, "fondo"); 
+    background-color: map-get($paleta, "fondo");
     color: map-get($paleta, "texto");
 }
 
@@ -60,7 +26,7 @@ body {
     .navbar-brand {
         font-size: 1.5rem;
         transition: color 0.3s;
-        
+
         &:hover {
             color: map-get($paleta, "secundario") !important;
         }
@@ -68,7 +34,7 @@ body {
 
     .nav-link {
         font-weight: 500;
-        
+
         &.active {
             color: map-get($paleta, "secundario") !important;
             border-bottom: 2px solid map-get($paleta, "secundario");
@@ -79,7 +45,7 @@ body {
 // Tarjetas
 .card {
     @include tarjeta-estilo;
-    
+
     .card-title {
         font-weight: 600;
         color: map-get($paleta, "primario");
@@ -118,12 +84,12 @@ body {
 footer {
     background-color: map-get($paleta, "blanco");
     border-top: 1px solid #eee;
-    
+
     a {
         display: inline-block;
         padding: 5px;
         border-radius: 50%;
-        
+
         svg {
             transition: color 0.3s ease;
         }
@@ -136,6 +102,13 @@ footer {
 
 // Keyframes
 @keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
